@@ -1,0 +1,207 @@
+:root {
+  font-family: "Segoe UI", "Yu Gothic UI", sans-serif;
+  color: #16324b;
+  background: #f3f6fa;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 16px 14px 0;
+}
+header,
+.row,
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+header {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+h1 {
+  font-size: 20px;
+  margin: 4px 0;
+}
+h2 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.7px;
+  color: #427285;
+}
+section {
+  background: white;
+  padding: 14px;
+  border: 1px solid #dde5ed;
+  border-radius: 10px;
+  margin: 12px 0;
+}
+button,
+input,
+select {
+  font: inherit;
+  font-size: 13px;
+  border: 1px solid #bacbd8;
+  border-radius: 5px;
+  padding: 8px;
+  background: white;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  background: #e8f1fa;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+button[aria-pressed="true"] {
+  background: #d7eafa;
+  color: #005a9c;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #56a5e6;
+  outline-offset: 2px;
+}
+.primary {
+  background: #0068ad;
+  color: white;
+  border-color: #0068ad;
+}
+.primary:hover {
+  background: #00558e;
+}
+input:not([type="checkbox"]) {
+  min-width: 0;
+  width: 100%;
+  margin: 8px 0;
+}
+.row input {
+  flex: 1;
+  width: auto;
+}
+.row h2 {
+  margin: 0;
+  flex: 1;
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  font-size: 13px;
+}
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #0068ad;
+  flex-shrink: 0;
+}
+label {
+  font-size: 13px;
+}
+.muted,
+small {
+  color: #556b7f;
+  font-size: 12px;
+}
+.error {
+  color: #a32626;
+  background: #fff1f1;
+  padding: 8px;
+  overflow-wrap: anywhere;
+}
+.success {
+  color: #19613d;
+  background: #e6f5ed;
+  padding: 10px;
+}
+.banner {
+  padding: 12px;
+  background: #e4edf7;
+}
+.tree {
+  overflow: auto;
+  max-height: 300px;
+  margin-top: 8px;
+}
+.treeRow {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: max-content;
+  margin: 2px 0;
+}
+.treeRow button {
+  border: 0;
+  padding: 6px;
+}
+.spacer {
+  width: 25px;
+}
+.treeRow .org {
+  text-align: left;
+  flex: 1;
+}
+.person {
+  display: flex;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #edf0f4;
+  align-items: flex-start;
+}
+.person span {
+  min-width: 0;
+}
+.person small {
+  display: block;
+  overflow-wrap: anywhere;
+  margin-top: 3px;
+}
+.people {
+  max-height: 45vh;
+  overflow: auto;
+}
+footer {
+  position: sticky;
+  bottom: 0;
+  background: #f3f6fa;
+  border-top: 1px solid #cbd8e4;
+  padding: 14px 0;
+  display: grid;
+  gap: 10px;
+}
+footer small {
+  display: block;
+}
+footer .primary {
+  flex: 1;
+}
+nav button {
+  flex: 1;
+}
+@media (min-width: 650px) {
+  main {
+    padding-inline: 32px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  button {
+    transition: background 0.12s;
+  }
+}
