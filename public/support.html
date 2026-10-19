@@ -23,6 +23,27 @@
       li {
         margin-bottom: 12px;
       }
+      figure {
+        margin: 20px 0 32px;
+      }
+      figure a {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+      }
+      figure img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #dde5ed;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+      figcaption {
+        margin-top: 10px;
+        color: #556b7f;
+        font-size: 14px;
+      }
     </style>
   </head>
   <body>
@@ -61,6 +82,57 @@
         Membersという正式テーブルが必要です。
       </li>
     </ol>
+    <section aria-labelledby="screenshots-heading">
+      <h2 id="screenshots-heading">操作画面</h2>
+      <p>画像をクリックすると、別タブで原寸の画像を確認できます。</p>
+      <h3>1. Excelファイルの指定</h3>
+      <p>
+        設定画面でSharePoint / OneDrive for
+        BusinessのExcel共有URLを入力し、「検証して保存」を押します。
+      </p>
+      <figure>
+        <a
+          href="images/excel-settings.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Excelファイルの指定画面を原寸で開く"
+        >
+          <img
+            src="images/excel-settings.png"
+            alt="Outlookのメール作成画面右側に、Excel共有URLを入力する組織アドレス帳の設定画面が表示されている状態"
+            width="1115"
+            height="494"
+            loading="lazy"
+          />
+        </a>
+        <figcaption>
+          Excelファイルの指定画面。共有URLを検証してから設定を保存します。
+        </figcaption>
+      </figure>
+      <h3>2. サンプルExcelの読み込み後</h3>
+      <p>
+        読み込みが完了すると、組織ツリーと社員一覧が表示されます。社員を検索・選択し、To／Cc／Bccへ追加できます。
+      </p>
+      <figure>
+        <a
+          href="images/sample-excel-view.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="サンプルExcel読み込み後の画面を原寸で開く"
+        >
+          <img
+            src="images/sample-excel-view.png"
+            alt="サンプルExcelを読み込み、架空企業の組織ツリー、社員一覧、選択人数と宛先追加ボタンが表示された組織アドレス帳"
+            width="278"
+            height="994"
+            loading="lazy"
+          />
+        </a>
+        <figcaption>
+          サンプルExcelを読み込んだ表示例です。画面内の企業・社員情報は架空のデータです。
+        </figcaption>
+      </figure>
+    </section>
     <h2>エラー時</h2>
     <ul>
       <li>
