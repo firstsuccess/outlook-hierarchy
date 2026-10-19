@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>組織アドレス帳 — 導入・サポート</title><style>body{font:16px/1.8 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 24px;color:#16324b}a{color:#0068ad}code{overflow-wrap:anywhere}li{margin-bottom:12px}</style></head><body>
 <h1>Outlook階層型組織アドレス帳</h1><p>Microsoft 365企業向けの組織アドレス帳アドインです。利用者のPCにNode.jsは必要ありません。</p>
+<h2>Excelテンプレート</h2>
+<p><a href="templates/OrganizationAddressBook.xlsx" download="OrganizationAddressBook.xlsx">Excelテンプレートをダウンロード（.xlsx）</a></p>
+<p>Organizations・Membersの正式なExcelテーブルと架空のサンプルデータを含みます。自社の組織・社員情報に編集して、SharePointまたはOneDrive for Businessへアップロードしてください。テーブル名と列見出しは変更せず、アップロード後に「共有 → リンクのコピー」で取得したURLをアドインに設定します。</p>
 <h2>導入</h2><ol><li><a href="manifest.xml" download>公開用マニフェストをダウンロード</a>し、OutlookのカスタムアドインまたはMicrosoft 365管理センターの統合アプリから登録します。</li><li>新規メールの「アプリ」から組織アドレス帳を開き、自社の職場アカウントでサインインします。会社のポリシーにより管理者承認が必要です。</li><li>SharePoint / OneDrive for Business上のExcel共有URLを入力します。ExcelにはOrganizations / Membersという正式テーブルが必要です。</li></ol>
 <h2>エラー時</h2><ul><li>認証・承認エラー：自社Microsoft 365管理者へ、アプリ名と表示されたエラー文を伝えてください。パスワードやトークンは共有しないでください。</li><li>403：ファイルへのアクセス権とMicrosoft Graphの委任同意を確認してください。</li><li>テーブルが見つからない：シート名ではなくテーブル名と列名を確認してください。</li><li>宛先追加：メール作成画面で使用し、新規追加件数を100件以下にしてください。</li></ul>
 <p>本アドインは社員情報を提供者のデータベースへ保存せず、利用者の権限でMicrosoft Graphから直接取得します。<a href="privacy.html">データの取り扱い</a></p>
