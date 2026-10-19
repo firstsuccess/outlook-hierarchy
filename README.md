@@ -68,6 +68,8 @@ IDは文字列を推奨し、先頭ゼロがある場合はExcelで文字列に�
 
 ## 静的公開
 
+公開サポートサイトのアクセスカウンターは、利用者承認に基づきSites管理のWorker/D1を使用します。社員情報は保存せず、初回20からの数値のみ保存します。Sitesへの更新は `npm run build:site` を使用してください。一般の静的ビルドは引き続き `npm run build` です。[カウンター構成](docs/SITES_COUNTER.md)
+
 ```powershell
 npm run typecheck
 npm test
