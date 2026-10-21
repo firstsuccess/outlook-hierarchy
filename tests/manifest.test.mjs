@@ -3,6 +3,9 @@ import { it, expect } from "vitest";
 import { generateManifest } from "../scripts/manifest.mjs";
 const published =
   "https://outlook-hierarchy-address-book.mnoda1979.chatgpt.site/";
+// Git on Windows can check XML files out as CRLF. Ignore only that transport
+// difference; keep comparing every other character so stale manifests fail.
+const normalizeEol = (text) => text.replace(/\r\n/g, "\n");
 it("enables compose pinning only in the v1.1 / Mailbox 1.5 override", () => {
   const xml = generateManifest(published);
   const boundary = xml.indexOf(
@@ -24,8 +27,21 @@ it("enables compose pinning only in the v1.1 / Mailbox 1.5 override", () => {
   expect(xml).not.toContain("localhost");
 });
 it("ships generated public and development manifests without stale copies", () => {
-  expect(readFileSync("public/manifest.xml", "utf8")).toBe(
-    generateManifest(published),
+  expect(normalizeEol(readFileSync("public/manifest.xml", "utf8"))).toBe(
+    normalizeEol(generateManifest(published)),
   );
-  expect(readFileSync("manifest.xml", "utf8")).toBe(generateManifest());
+  expect(normalizeEol(readFileSync("manifest.xml", "utf8"))).toBe(
+    normalizeEol(generateManifest()),
+  );
+});
+it("accepts CRLF checkouts while still rejecting a change to pinning support", () => {
+  const expected = generateManifest(published);
+  const windowsCheckout = expected.replace(/\n/g, "\r\n");
+  expect(windowsCheckout).not.toBe(expected);
+  expect(normalizeEol(windowsCheckout)).toBe(normalizeEol(expected));
+  const stale = windowsCheckout.replace(
+    "<SupportsPinning>true</SupportsPinning>",
+    "<SupportsPinning>false</SupportsPinning>",
+  );
+  expect(normalizeEol(stale)).not.toBe(normalizeEol(expected));
 });

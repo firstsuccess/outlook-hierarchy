@@ -16,3 +16,4 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npm run validate:manifest
+      - run: node node_modules/office-addin-manifest/cli.js validate public/manifest.xml

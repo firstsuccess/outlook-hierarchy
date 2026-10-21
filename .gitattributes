@@ -1,0 +1,4 @@
+# Use the same text line endings on Windows checkouts and in generated files.
+* text=auto eol=lf
+*.png binary
+*.xlsx binary
