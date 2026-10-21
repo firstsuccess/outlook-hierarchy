@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host localhost",
-    "build": "tsc --noEmit && vite build",
+    "build": "node scripts/build-support-pages.mjs && tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "manifest": "node scripts/manifest.mjs",

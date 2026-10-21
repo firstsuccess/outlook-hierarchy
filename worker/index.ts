@@ -60,9 +60,12 @@ export default {
     return new Response(request.method === "HEAD" ? null : bytes, {
       headers: {
         "Content-Type": asset.type,
-        "Cache-Control": asset.type.startsWith("text/html")
-          ? "no-cache"
-          : "public, max-age=3600",
+        "Cache-Control":
+          asset.type.startsWith("text/html") ||
+          path === "/support.css" ||
+          (path.startsWith("/support-") && path.endsWith(".js"))
+            ? "no-cache"
+            : "public, max-age=3600",
         "X-Content-Type-Options": "nosniff",
       },
     });
