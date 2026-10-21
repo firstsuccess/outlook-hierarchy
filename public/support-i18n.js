@@ -1,4 +1,4 @@
-import { translations } from "./support-translations.js";
+import { translations } from "./support-translations.js?v=admin1";
 export const languageKey = "monja.support.language";
 export function resolveLanguage(requested, saved) {
   return [requested, saved, "ja"].find((value) =>

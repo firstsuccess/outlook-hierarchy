@@ -1,4 +1,4 @@
-import { translations } from "./support-translations.js";
+import { translations } from "./support-translations.js?v=admin1";
 export function counterText(count, language, failed = false) {
   const lang = Object.hasOwn(translations, language) ? language : "ja";
   if (failed) return translations[lang].counterError;

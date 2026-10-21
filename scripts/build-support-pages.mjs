@@ -15,7 +15,7 @@ const external = ' target="_blank" rel="noopener noreferrer"';
 const languages = `<div class="language-bar"><label for="site-language">Language / 言語 / 语言</label><select id="site-language"><option value="ja" lang="ja">日本語</option><option value="en" lang="en">English</option><option value="zh-CN" lang="zh-CN">简体中文</option></select></div>`;
 function page(title, content, counter = false) {
   return `<!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">${text("title", title)}<link rel="stylesheet" href="/support.css"><script type="module" src="/support-i18n.js"></script>${counter ? '<script type="module" src="/support-counter.js?v=i18n1"></script>' : ""}</head><body>${languages}<main>${content}</main></body></html>`;
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">${text("title", title)}<link rel="stylesheet" href="/support.css"><script type="module" src="/support-i18n.js?v=admin1"></script>${counter ? '<script type="module" src="/support-counter.js?v=i18n1"></script>' : ""}</head><body>${languages}<main>${content}</main></body></html>`;
 }
 const screenshot = (file, keys, width, height) =>
   `<figure><a href="images/${file}"${external} data-i18n-aria="${keys}Open" aria-label="${esc(ja[keys + "Open"])}"><img src="images/${file}" data-i18n-alt="${keys}Alt" alt="${esc(ja[keys + "Alt"])}" width="${width}" height="${height}" loading="lazy"></a>${text("figcaption", keys + "Caption")}</figure>`;
@@ -53,3 +53,4 @@ const privacy = page(
 await fs.writeFile("public/support.html", support);
 await fs.writeFile("public/privacy.html", privacy);
 console.log("Support and data handling pages generated (ja / en / zh-CN)");
+
