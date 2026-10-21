@@ -23,6 +23,13 @@ const support = page(
   "supportTitle",
   `
 ${text("h1", "product")}${text("p", "release")}${text("p", "intro")}
+<section class="setup-guide" aria-labelledby="setup-guide-heading">${text("h2", "setupHeading", ' id="setup-guide-heading"')}
+<div class="setup-step">${text("h3", "adminHeading")}${text("p", "adminSummary")}
+<ol><li>${link("https://admin.microsoft.com/", "adminLink", external)}${text("p", "adminPath")}</li><li>${link("manifest.xml", "manifestDownload", " download")}${text("p", "adminUpload")}</li>${text("li", "adminAssign")}${text("li", "adminWorkbook")}</ol>
+${text("p", "adminConsent")}<p>${link("https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-deployment-of-add-ins", "adminDocs", external)}</p></div>
+<div class="setup-step user-step">${text("h3", "userHeading")}<p class="key-message">${text("strong", "userRequired")}</p>
+<ol>${text("li", "userGetLink")}${text("li", "userOpen")}${text("li", "userSave")}</ol>${text("p", "userPermissions")}${text("p", "userStored")}
+<p>${link("#screenshots-heading", "userScreenshotLink")}</p></div></section>
 ${text("h2", "templateHeading")}<p>${link("templates/OrganizationAddressBook.xlsx", "templateDownload", ' download="OrganizationAddressBook.xlsx"')}</p>${text("p", "templateHelp")}
 ${text("h2", "installHeading")}<ol><li>${link("manifest.xml", "manifestDownload", " download")} ${text("span", "installMethod")}</li>${text("li", "installOpen")}${text("li", "installExcel")}</ol>
 <section aria-labelledby="web-registration-heading">${text("h2", "webHeading", ' id="web-registration-heading"')}
