@@ -38,6 +38,13 @@ function office() {
   return add;
 }
 beforeEach(() => vi.unstubAllGlobals());
+it("does not append to a different message after the current item changes", async () => {
+  const add = office();
+  const pending = addRecipients("to", [member("new@example.com")]);
+  (Office.context.mailbox as any).item = null;
+  await expect(pending).rejects.toThrow(/Message changed/);
+  expect(add).not.toHaveBeenCalled();
+});
 it("appends only new unique valid recipients to selected field", async () => {
   const add = office();
   expect(

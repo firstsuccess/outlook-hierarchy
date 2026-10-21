@@ -6,5 +6,6 @@ dist/
 .certs/
 coverage/
 .artifacts/
+outputs/
 *.log
 *.inspect.ndjson

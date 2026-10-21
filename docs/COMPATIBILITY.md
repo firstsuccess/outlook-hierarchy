@@ -2,6 +2,8 @@
 
 ## 採用方式
 
+v1.1.0.0では作成画面のピン留め用にVersionOverrides v1.1 / Mailbox 1.5を追加しました。非対応ホストは従来のv1.0 / Mailbox 1.3へフォールバックします。利用者による最初のピン留めが必要で、Outlook完全終了後の強制自動起動は保証しません。[操作と制約](PINNING.md)
+
 配布方式は提供者が所有するマルチテナントEntraアプリ（AzureADMultipleOrgs）です。認証先はorganizationsで、顧客企業ごとのID入力・ビルドは不要です。利用企業の同意・導入ポリシーは適用されます。詳細は[DISTRIBUTION.md](DISTRIBUTION.md)。
 
 Office Add-inのXML（add-in only）マニフェストを使用します。unified manifestの対応差を避け、Web / New / ClassicのMessageComposeCommandSurfaceにShowTaskpaneを登録します。Mailbox 1.3を要求し、Office.jsのRecipients.getAsync/addAsyncを使用します。作成画面以外とAPI非対応時は追加不可です。XMLのReadWriteItemはメールアイテムの操作許可であり、Graphの委任許可とは別です。

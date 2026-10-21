@@ -32,6 +32,10 @@ export async function addRecipients(kind: RecipientKind, members: Member[]) {
     .flat()
     .map((x) => x.emailAddress);
   const recipients = uniqueRecipients(members, existing);
+  if (Office.context.mailbox.item !== item || !canCompose())
+    throw Error(
+      "メールが切り替わりました。現在のメールで選択し直してください / Message changed. Select recipients again for the current message.",
+    );
   if (!recipients.length) return 0;
   if (recipients.length > 100)
     throw Error(

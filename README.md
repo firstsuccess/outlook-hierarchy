@@ -33,6 +33,8 @@ ExcelテーブルのGETでもWorkbook APIの最小委任権限は `Files.ReadWri
 
 ## Outlookへの登録
 
+v1.1.0.0から作成画面のピン留めに対応しています。最新版の公開マニフェストを登録し、作成メールからアドインを開いてOutlookのピンアイコンを一度押してください。再起動後の自動表示はOutlook側の復元動作に依存します。[ピン留めの操作・制約](docs/PINNING.md)
+
 ```powershell
 npm run manifest
 npm run validate:manifest

@@ -11,6 +11,7 @@ import {
 import { createSettingsStore, type FileRef } from "./settings";
 import { loadBook, resolveFile } from "./graph";
 import { addRecipients, canCompose, type RecipientKind } from "./outlook";
+import { watchComposeContext } from "./pinning";
 import "./style.css";
 function App() {
   const [ready, setReady] = useState(false),
@@ -35,6 +36,7 @@ function App() {
   const t = (ja: string, eng: string) => (en ? eng : ja);
   useEffect(() => {
     let live = true;
+    let stopWatching = () => {};
     Office.onReady((info) => {
       if (!live) return;
       const valid = info.host === Office.HostType.Outlook;
@@ -46,11 +48,18 @@ function App() {
         setUrl(saved?.webUrl ?? "");
         setSettings(!saved);
         setCompose(canCompose());
+        stopWatching = watchComposeContext((isCompose) => {
+          setCompose(isCompose);
+          setSelected(new Set());
+          setNotice("");
+          setError("");
+        }, setError);
         if (saved) void reload(saved);
       }
     });
     return () => {
       live = false;
+      stopWatching();
     };
   }, []);
   async function work(fn: () => Promise<void>) {
@@ -145,6 +154,25 @@ function App() {
           {t("再読み込み", "Refresh")}
         </button>
       </nav>
+      {host && (
+        <details className="pin-help">
+          <summary>
+            {t("表示を維持する（ピン留め）", "Keep this pane open (pin)")}
+          </summary>
+          <p>
+            {t(
+              "メール作成画面でアドインを開き、Outlook側のパネル上部にあるピンを一度押してください。対応するOutlookでは、次のメール作成時も表示を維持できます。",
+              "Open the add-in in a compose message and select the pin at the top of Outlook's pane once. Supported Outlook clients can then keep it open for subsequent messages.",
+            )}
+          </p>
+          <p>
+            {t(
+              "Outlookの完全終了・再起動後の表示復元はOutlook側に依存します。表示されない場合は作成画面から開き直してください。Excelの参照設定は保存されます。",
+              "Restoring the pane after restarting Outlook depends on the host. If it is hidden, reopen it from a compose message. Your Excel reference settings are saved.",
+            )}
+          </p>
+        </details>
+      )}
       {!ready && <p>{t("Outlookを確認中…", "Waiting for Outlook…")}</p>}
       {ready && !host && (
         <p className="banner">

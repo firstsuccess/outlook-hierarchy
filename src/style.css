@@ -4,6 +4,14 @@
   background: #f3f6fa;
   font-synthesis: none;
 }
+.pin-help {
+  margin: 12px 0;
+  color: #556b7f;
+  font-size: 12px;
+}
+.pin-help summary {
+  cursor: pointer;
+}
 * {
   box-sizing: border-box;
 }
