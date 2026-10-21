@@ -35,7 +35,7 @@ export const translations = {
       "新規メールの「アプリ」から組織アドレス帳を開き、自社の職場アカウントでサインインします。会社のポリシーにより管理者承認が必要です。",
     installExcel:
       "SharePoint / OneDrive for Business上のExcel共有URLを入力します。ExcelにはOrganizations / Membersという正式テーブルが必要です。",
-    webHeading: "Web版Outlookでのアドイン登録",
+    webHeading: "Web版Outlookでのアドイン登録（管理者が一括配信しない企業の場合）",
     webOpen:
       "下の登録画面を開き、利用するMicrosoft 365の職場アカウントでサインインします。",
     webLink: "Web版Outlookのアドイン登録画面を開く",
@@ -150,7 +150,7 @@ export const translations = {
       "In a new message, open the address book from Apps and sign in with your work account. Your company may require administrator approval.",
     installExcel:
       "Enter the shared Excel URL from SharePoint or OneDrive for Business. The workbook must contain named tables Organizations and Members.",
-    webHeading: "Register the add-in in Outlook on the web",
+    webHeading: "Register the add-in in Outlook on the web (if your organization does not use centralized administrator deployment)",
     webOpen:
       "Open the registration page below and sign in with the Microsoft 365 work account you want to use.",
     webLink: "Open Outlook on the web add-in registration",
@@ -266,7 +266,7 @@ export const translations = {
       "在新邮件的“应用”中打开组织通讯录，并使用工作帐户登录。您的公司可能要求管理员批准。",
     installExcel:
       "输入 SharePoint 或 OneDrive for Business 上的 Excel 共享 URL。工作簿必须包含名为 Organizations 和 Members 的正式表格。",
-    webHeading: "在 Outlook 网页版中注册加载项",
+    webHeading: "在 Outlook 网页版中注册加载项（适用于管理员未统一部署的企业）",
     webOpen: "打开下方注册页面，并使用要使用的 Microsoft 365 工作帐户登录。",
     webLink: "打开 Outlook 网页版加载项注册页面",
     webMyAddins:
