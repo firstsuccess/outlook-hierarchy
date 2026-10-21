@@ -203,6 +203,25 @@ footer .primary {
 nav button {
   flex: 1;
 }
+.provider-credit {
+  margin: 12px 0 0;
+  padding: 12px 0 16px;
+  border-top: 1px solid #cbd8e4;
+  color: #556b7f;
+  font-size: 12px;
+  text-align: center;
+}
+.provider-credit span {
+  display: block;
+}
+.provider-credit a {
+  color: #0068ad;
+  overflow-wrap: anywhere;
+}
+.provider-credit a:focus-visible {
+  outline: 3px solid #56a5e6;
+  outline-offset: 3px;
+}
 @media (min-width: 650px) {
   main {
     padding-inline: 32px;

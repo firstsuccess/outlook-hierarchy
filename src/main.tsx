@@ -462,6 +462,12 @@ function App() {
           </footer>
         </>
       )}
+      <p className="provider-credit">
+        <span>By First Success G.K.</span>{" "}
+        <a href="https://first-success.com" target="_blank" rel="noopener noreferrer">
+          https://first-success.com
+        </a>
+      </p>
     </main>
   );
 }
