@@ -37,7 +37,7 @@ Excel Onlineで管理する任意の組織階層から社員を検索・複数�
 必要条件: Windows 11、Node.js 24 / npm 11、Exchange Onlineの職場アカウント、SharePoint OnlineまたはOneDrive for Business。Outlook.com、Gmail、オンプレミスExchange、IE WebViewは対象外です。
 
 ```powershell
-cd C:\outlook-hierarchy
+cd C:\codex\outlook-hierarchy
 npm ci
 Copy-Item .env.example .env
 # .envに提供者のマルチテナントEntraアプリのClient IDを入力
